@@ -49,13 +49,13 @@ login.gov supports two ways to authenticate clients:
 
 2. `private_key_jwt`
 
-    Clients send a [JWT][jwt] signed with a private key when requesting access tokens. The corresponding public key is registered ahead of time in the developer portal, similar to SAML. This is the preferred authentication method for web apps.
+    Clients send a [JWT][jwt] signed with a private key when requesting access tokens. The corresponding public key is registered ahead of time in the [developer portal](#developer-portal), similar to SAML. This is the preferred authentication method for web apps.
 
 [pkce]: https://tools.ietf.org/html/rfc7636
 
 ### Developer Portal
 
-Visit $DASHBOARD_URL to register a Service Provider. The issuer will be the `client_id`, and make sure to register a `redirect_uri` for your application and a client cert if using `private_key_jwt`.
+[Register your Service Provider]({{site.baseurl}}/registering-your-sp/) with login.gov. The Issuer field will be used as the `client_id`. Make sure to register a `redirect_uri` for your application as well a client cert if using `private_key_jwt`.
 
 ## Auto-Discovery
 

@@ -9,7 +9,11 @@ This documentation is intended for federal agency developers interested in integ
 
 ## Technical overview
 
-login.gov is a standard SAML identity provider, adhering to the [Web Browser SSO Profile](https://en.wikipedia.org/wiki/SAML_2.0#Web_Browser_SSO_Profile) with enhancements for [NIST 800-63-3](https://pages.nist.gov/800-63-3/). This documentation uses standard SAML terminology, where the Identity Provider (IdP) is the service that stores the user's actual credentials, login.gov in this case; the Service Provider (SP) refers to your application, which will ask the IdP for authentication information when a user tries to log in.
+login.gov is an identity provider service, accessible via both a SAML interface and an OpenID Connect interface. The SAML implementation adheres to the [Web Browser SSO Profile](https://en.wikipedia.org/wiki/SAML_2.0#Web_Browser_SSO_Profile) with enhancements for [NIST 800-63-3](https://pages.nist.gov/800-63-3/), and the OpenID Connect interface confroms to the [iGov WG][igov] profile.
+
+This documentation uses standard terminology, where the Identity Provider (IdP) is the service that stores the user's actual credentials, login.gov in this case; the Service Provider (SP) refers to your application, which will ask the IdP for authentication information when a user tries to log in.
+
+[igov]: http://openid.net/wg/igov/
 
 ## Integration checklist
 

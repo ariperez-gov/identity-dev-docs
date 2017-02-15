@@ -4,7 +4,7 @@ title: Registering your Service Provider
 
 # Registering your Service Provider
 
-Once you have a working SAML implementation and have configured your SP, the next step is to provide us with the following details about your application. A "`*`" denotes an attribute not found in the SAML WebSSO profile.
+Once you have a working SP implementation, the next step is to provide us with the following details about your application.
 
 - **Friendly name** * (optional) — The name for your SP that will be displayed to users.
 
@@ -15,6 +15,23 @@ Once you have a working SAML implementation and have configured your SP, the nex
   ```
 
 - **Agency** * — The department and agency your SP belongs to. See the list of all [U.S. Government Departments and Agencies](https://www.usa.gov/federal-agencies).
+
+- **Block encryption** — Defines the type of encryption your SP supports. Currently, only `aes256-cbc` is supported.
+
+- **Public certificate** — The public certificate, PEM encoded, allowing login.gov to verify the authenticity of authentication and logout requests. Learn how to [generate a self-signed certificate]({{site.baseurl}}/certs/).
+
+Additional details
+
+<!-- MarkdownTOC depth="4" autolink="true" bracket="round" -->
+
+- [SAML](#saml)
+- [OpenID Connect](#openid-connect)
+
+<!-- /MarkdownTOC -->
+
+## SAML
+
+\* Denotes an attribute not found in the SAML WebSSO profile.
 
 - **Assertion consumer service URL** — Your application endpoint which receives authentication assertions.
 
@@ -42,6 +59,10 @@ Once you have a working SAML implementation and have configured your SP, the nex
 
 - **Attribute bundle** * (optional) — The preset bundle of attributes your SP requires. login.gov allows you to either pre-define what attributes your SP receives or request them at run time. [See the list of available attributes.]({{site.baseurl}}/attributes/)
 
-- **Block encryption** — Defines the type of encryption your SP supports. Currently, only `aes256-cbc` is supported.
+## OpenID Connect
 
-- **Public certificate** — The public certificate, PEM encoded, allowing login.gov to verify the authenticity of authentication and logout requests. Learn how to [generate a self-signed certificate]({{site.baseurl}}/certs/).
+- **Redirect URI** - The URI that login.gov should redirect to after authorization. This can be a custom scheme to support native applications.
+
+   ```
+   x-example-app:/result
+   ```
